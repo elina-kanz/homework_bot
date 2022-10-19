@@ -1,3 +1,6 @@
+"""Бот-ассистент, сообщающий о статусе отправленных домашних работ."""
+
+
 import os
 import sys
 import logging
@@ -82,9 +85,7 @@ def check_response(response):
 
 
 def parse_status(homework):
-    """
-    Извлекает из информации о конкретной домашней работе статус этой работы.
-    """
+    """Извлекает из конкретной домашней работы статус этой работы."""
     homework_name = homework['homework_name']
     homework_status = homework['status']
     try:
@@ -118,10 +119,10 @@ def check_tokens():
 
 def main():
     """
-    Основная логика работы бота: запускаем бота, отправляем запрос,
-    анализируем, бот отправляет анализ
-    """
+    Основная логика работы бота.
 
+    Запускаем бота, отправляем запрос,анализируем, бот отправляет анализ
+    """
     if check_tokens():
         bot = telegram.Bot(token=TELEGRAM_TOKEN)
         current_timestamp = int(time.time())

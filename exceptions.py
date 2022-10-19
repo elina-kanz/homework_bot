@@ -1,14 +1,11 @@
-"""Кастомные исключения"""
+"""Кастомные исключения."""
 
 
 class NotSendingError(Exception):
-    """События, которые не пересылаются в Telegram"""
-
-    def __init__(self, message):
-        self.message = message
+    """События, которые не пересылаются в Telegram."""
 
 
 class SendingError(NotSendingError):
-    """События уровня Error, которые будут пересылаться в Telegram"""
+    """События уровня Error, которые будут пересылаться в Telegram."""
 
     pass
