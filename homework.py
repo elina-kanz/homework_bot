@@ -49,6 +49,7 @@ def get_api_answer(current_timestamp):
     """Делает запрос к эндпоинту API-сервиса."""
     params = {'from_date': current_timestamp}
     try:
+        logging.info(f'Попытка запроса к энпоинту {ENDPOINT}')
         response = requests.get(ENDPOINT, headers=HEADERS, params=params)
     except Exception:
         log_message = (f'Сбой в работе программы: Эндпоинт {ENDPOINT}'
@@ -72,7 +73,8 @@ def check_response(response):
         log_message = ('Сбой в работе программы:'
                        'в ответе API нет необходимого ключа')
         raise TypeError(log_message)
-    if not isinstance(response.get('homeworks'), list):
+    homeworks = response.get('homeworks')
+    if not isinstance(homeworks, list):
         log_message = ('Сбой в работе программы: в ответе API под ключом '
                        '`homeworks` хранится некорректный тип')
         raise TypeError(log_message)
@@ -109,7 +111,7 @@ def main():
 
     Запускаем бота, отправляем запрос, анализируем, бот отправляет анализ
     """
-    if check_tokens() is False:
+    if not check_tokens():
         message = ('Отсутствует обязательная переменная окружения.'
                    'Программа принудительно остановлена')
         sys.exit(message)
