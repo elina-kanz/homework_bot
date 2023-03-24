@@ -20,7 +20,7 @@ requests==2.26.0
 git clone git@github.com:elina-kanz/homework_bot.git
 cd homework_bot
 ```
-Перейти в папку с проектом и установить виртуальное окружение
+
 ```
 Cоздать и активировать виртуальное окружение:
 ```
