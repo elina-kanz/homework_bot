@@ -16,23 +16,28 @@ requests==2.26.0
 ```
 ### Как запустить проект
 Клонировать репозиторий и перейти в него в командной строке:
+
 ```
 git clone git@github.com:elina-kanz/homework_bot.git
 cd homework_bot
 ```
 
-```
 Cоздать и активировать виртуальное окружение:
+
 ```
 python3 -m venv env
 source env/bin/activate
 ```
+
 Установить зависимости из файла requirements.txt:
+
 ```
 python3 -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
+
 Запустить проект
+
 ```
 python3 homework.py
 ```
@@ -43,6 +48,6 @@ python3 homework.py
 PRACTICUM_TOKEN={выдается ученикам курса}
 TELEGRAM_TOKEN={Токен созданного бота}
 TELEGRAM_CHAT_ID={ID вашего телеграм-чата}
-
+```
 
 
